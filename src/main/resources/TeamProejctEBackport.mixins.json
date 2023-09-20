@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.button.teamprojectebackport.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "teamprojectebackport.refmap.json",
+  "mixins": [
+    "KnowledgeEventsProviderMixin",
+    "TransmutationOfflineMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
