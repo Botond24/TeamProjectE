@@ -27,11 +27,14 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
+import static com.button.teamprojectebackport.TeamProjectEBackport.LOGGER;
+
 public class TPCommand {
 
     public static final Multimap<UUID, UUID> INVITATIONS = HashMultimap.create();
 
     public static void register(CommandDispatcher<CommandSource> dispatcher){
+        LOGGER.debug("Registering Commands");
         dispatcher.register(Commands.literal("team_projecte")
                 .then(Commands.literal("invite")
                         .requires(TPCommand::requiresPlayer)

@@ -23,26 +23,27 @@ import java.util.stream.Collectors;
 public class TeamProjectEBackport {
 
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
-    public void TeamProjectEBackport() {
+    public TeamProjectEBackport() {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        //MinecraftForge.EVENT_BUS.register(TeamProjectEBackport::onRegisterCommandEvent);
     }
 
     @SubscribeEvent
-    public void onRegisterCommand(RegisterCommandsEvent event) {
+    public static void onRegisterCommandEvent(RegisterCommandsEvent event) {
         TPCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent
-    public void onServerStopped(FMLServerStoppedEvent event) {
+    public static void onServerStopped(FMLServerStoppedEvent event) {
         TPCommand.INVITATIONS.clear();
         TPSavedData.onServerStopped();
     }
 
     @SubscribeEvent
-    public void onPlayerJoin(EntityJoinWorldEvent event) {
+    public static void onPlayerJoin(EntityJoinWorldEvent event) {
         if (event.getWorld().dimension() == World.OVERWORLD && event.getEntity().getClass().equals(ServerPlayerEntity.class))
             sync((ServerPlayerEntity) event.getEntity());
     }
