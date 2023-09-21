@@ -50,7 +50,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'teamprojecte'
 
             mods {
-                teamprojecte {
+                teamprojectebackport {
                     source sourceSets.main
                 }
             }

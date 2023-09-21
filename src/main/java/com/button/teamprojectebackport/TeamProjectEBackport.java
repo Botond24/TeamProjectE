@@ -4,6 +4,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.server.ServerLifecycleHooks;
+import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.event.server.FMLServerStoppedEvent;
@@ -11,17 +12,18 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import moze_intel.projecte.api.ProjectEAPI;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Mod("teamprojectebackport")
 public class TeamProjectEBackport {
 
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = (Logger) LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public void TeamProjectEBackport() {
         // Register ourselves for server and other game events we are interested in

@@ -9,15 +9,14 @@ authors="Button, 6LeoY"
 description='''
 A backport of Team ProjectE by 6LeoY
 '''
-[[dependencies.TeamProjectEBackport]]
+[[dependencies.teamprojectebackport]]
    modId="forge"
    mandatory=true
    versionRange="[36,)"
    ordering="NONE"
-
    side="BOTH"
 
-[[dependencies.TeamProjectEBackport]]
+[[dependencies.teamprojectebackport]]
    modId="minecraft"
    mandatory=true
    versionRange="[1.16.5,1.17)"
