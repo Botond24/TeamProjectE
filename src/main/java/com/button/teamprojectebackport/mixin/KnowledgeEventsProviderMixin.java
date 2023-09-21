@@ -22,6 +22,7 @@ public class KnowledgeEventsProviderMixin {
     static {
         try{
             PLAYER_FIELD = Class.forName("moze_intel.projecte.impl.capability.KnowledgeImpl$DefaultImpl").getDeclaredField("player");
+            PLAYER_FIELD.setAccessible(true);
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -11,6 +11,7 @@ import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TPTeam {
 
@@ -102,7 +103,7 @@ public class TPTeam {
     }
 
     public List<UUID> getAll(){
-        return Lists.asList(owner, (UUID[]) members.toArray());
+        return Stream.concat(Stream.of(owner),members.stream()).collect(Collectors.toList());
     }
 
 
